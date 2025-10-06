@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Unified Health Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 90%; }
+        th, td { border: 1px solid #ccc; padding: 8px; }
+        .UP { color: green; font-weight: bold; }
+        .DOWN { color: red; font-weight: bold; }
+    </style>
+    <meta http-equiv="refresh" content="10">
+</head>
+<body>
+<h2>Unified Health Dashboard</h2>
+<table>
+    <tr>
+        <th>Service</th>
+        <th>Status</th>
+        <th>Kafka</th>
+        <th>MQ</th>
+    </tr>
+    <tr th:each="svc : ${services}">
+        <td th:text="${svc.name}"></td>
+        <td th:classappend="${svc.status}" th:text="${svc.status}"></td>
+        <td th:text="${svc.details['kafka']} ?: 'N/A'"></td>
+        <td th:text="${svc.details['mq']} ?: 'N/A'"></td>
+    </tr>
+</table>
+</body>
+</html>

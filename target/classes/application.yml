@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+dashboard:
+  services:
+    - name: orders-service
+      url: http://localhost:8081/actuator/health/messagingListeners
+    - name: payments-service
+      url: http://localhost:8082/actuator/health/messagingListeners

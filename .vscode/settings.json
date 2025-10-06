@@ -1,0 +1,4 @@
+{
+    "wca.enable": false,
+    "java.compile.nullAnalysis.mode": "automatic"
+}
